@@ -26,14 +26,15 @@ Measure first, change one thing, measure again. Every claim in the report has a 
 9. **Private and underscored hooks stay out of app code.** Use them only through LLDB, environment variables or the marker patch, and only in debug builds. If `rules.privateHooksNeedOk` is true, ask the user first.
 10. **Profile build for numbers.** Use `build.sh profile`: the Release-like configuration, security gates off by compile flag, debug network inspectors not started. Debug numbers are only for `_printChanges` counts.
 11. **Project rules apply.** Read the files in `rules.codeRules` before a fix. Use only APIs available at `deploymentTarget`.
-12. **Each reference ends with "Action plan output".** Write that block into the findings log when the phase ends.
+12. **Learn as you work.** Read the project memory at intake (`memory.mjs show --screen <Screen>`). Record each route to a screen and each obstacle with its fix as soon as you find it (`references/12-project-memory.md`). Never record secrets.
+13. **Each reference ends with "Action plan output".** Write that block into the findings log when the phase ends.
 
 ## Phase router
 
 | # | Phase | Read | Output |
 |---|---|---|---|
 | 0 | Setup | `references/00-setup.md` | `.swiftui-perf.json`, `setup.mjs check` says "config ok" |
-| 1 | Intake | this file, `references/09-test-environment.md` | symptom, screen, target, login confirmed |
+| 1 | Intake | this file, `references/09-test-environment.md`, `references/12-project-memory.md` | symptom, screen, target, login confirmed, memory read |
 | 2 | Field data | `references/08-field-data.md` | top real-user launch, hang and disk-write issues |
 | 3 | Static scan | `references/03-code-smells.md`, `references/01-rendering-internals.md` | suspects list from `smell_scan.sh` |
 | 4 | Instrumented run | `references/05-screen-open-metrics.md`, `references/06-launch.md`, `references/07-network-wait.md` | baseline PERF lines and a trace |
@@ -84,6 +85,7 @@ report.md          final report
 - `runlog.mjs new|diff|show`: run variables; `diff` enforces one variable per A/B.
 - `smell_scan.sh [path]`: the grep catalogue from `references/03-code-smells.md`.
 - `printchanges.sh --out <dir> --view <View>`: body counts and reasons through LLDB.
+- `memory.mjs show | route | confirm | obstacle | fact | remove`: the project memory (routes to screens, obstacles and fixes, facts).
 - `config.mjs get <key>`: one config value, for shell use.
 
 ## Perf tests
@@ -96,3 +98,4 @@ report.md          final report
 - Each kept change has a before and after number from the same recipe, and `runlog.mjs diff` says one variable changed.
 - `markers.mjs status` says "clean", and no perf code is in `git diff`.
 - Mock rules, network conditions and stray `xctrace` recordings are off.
+- The project memory has the routes and obstacles of this session.

@@ -15,3 +15,4 @@ This repository publishes one agent skill, `swiftui-perf`, for several agent pla
 - Write English in ASD-STE100 Simplified Technical English: short sentences, active voice, one term per meaning.
 - `SKILL.md` stays under 500 lines; the frontmatter follows the Agent Skills specification.
 - Run `bash tools/validate.sh` before each commit.
+- Commit messages: `type(area): message`, for example `feat(memory): record routes to screens` or `fix(waterfall): ignore 401 retries`. Types: feat, fix, docs, refactor, chore.

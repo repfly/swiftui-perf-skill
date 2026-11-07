@@ -50,6 +50,7 @@ bash <skill>/scripts/build.sh debug              # only for printchanges.sh and 
 - Deep link: `xcrun simctl openurl <udid> '<scheme>://<path>'`.
 - Taps: use the agent's simulator tool (tap, swipe, screenshot). Take a screenshot before you tap by coordinate.
 - For N runs, use the same path every time: same start screen, same taps, same wait.
+- Use the recorded route from `memory.mjs show --screen <Screen>`. Record a new route when you find one (12).
 
 ## Network conditions
 

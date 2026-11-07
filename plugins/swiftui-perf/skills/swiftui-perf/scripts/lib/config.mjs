@@ -1,11 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
-import { CONFIG_ENV, CONFIG_FILE, DEFAULT_WORK_DIR, NetworkType } from "./constants.mjs";
+import { CONFIG_ENV, CONFIG_FILE, DEFAULT_MEMORY_FILE, DEFAULT_WORK_DIR, NetworkType } from "./constants.mjs";
 import { fail } from "./cli.mjs";
 
 export const DEFAULTS = Object.freeze({
   version: 1,
   workDir: DEFAULT_WORK_DIR,
+  memoryFile: DEFAULT_MEMORY_FILE,
   project: { workspace: null, project: null },
   apps: [],
   build: { profileConfiguration: "Release", debugConfiguration: "Debug", profileBuildSettings: [], derivedDataPath: null },

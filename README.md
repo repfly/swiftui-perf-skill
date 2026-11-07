@@ -34,7 +34,8 @@ A skill for AI coding agents. It finds and fixes slow parts of a SwiftUI iOS app
 5. **Trace.** It records the app with Instruments to see where the time goes, and counts how often each view redraws.
 6. **Fix.** It makes one change, then measures again the same way. It keeps the change only if the numbers get better.
 7. **Clean up.** It removes all the temporary code.
-8. **Report.** It writes a short report: what was slow, what it fixed, how much faster it is, and what is left.
+8. **Remember.** It saves how to reach each screen and every problem it hit (and how it solved it) in `.swiftui-perf-memory.json`. The next session starts with that knowledge. Commit the file to share it with your team.
+9. **Report.** It writes a short report: what was slow, what it fixed, how much faster it is, and what is left.
 
 ## Install
 

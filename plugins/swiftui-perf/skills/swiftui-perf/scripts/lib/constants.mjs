@@ -8,6 +8,22 @@ export const CONFIG_FILE = ".swiftui-perf.json";
 export const CONFIG_ENV = "SWIFTUI_PERF_CONFIG";
 export const DEFAULT_WORK_DIR = ".swiftui-perf";
 export const MARKER_STATE_FILE = "markers-state.json";
+export const DEFAULT_MEMORY_FILE = ".swiftui-perf-memory.json";
+
+export const MemoryArea = Object.freeze({
+  setup: "setup",
+  build: "build",
+  install: "install",
+  login: "login",
+  launch: "launch",
+  navigation: "navigation",
+  markers: "markers",
+  network: "network",
+  trace: "trace",
+  lldb: "lldb",
+  backend: "backend",
+  other: "other",
+});
 
 export const LAUNCH_FLAG = "PerfMarkers";
 export const LAUNCH_ARGS = [`-${LAUNCH_FLAG}`, "YES"];

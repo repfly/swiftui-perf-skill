@@ -31,6 +31,7 @@ Then run `setup.mjs check`. Fix each "problem" line before phase 1.
 | `deploymentTarget` | the iOS floor; fixes use only APIs available there |
 | `smellScan.paths`, `smellScan.exclude` | folders for `smell_scan.sh` |
 | `rules.codeRules`, `rules.testException`, `rules.privateHooksNeedOk` | project rules the fix loop follows |
+| `memoryFile` | the project memory file (12); commit it |
 | `printChanges.initFile`, `printChanges.initLine` | a line that runs once at app start, for the LLDB stdout redirect |
 
 ## Questions that need care
