@@ -1,20 +1,25 @@
 # swiftui-perf
 
-A skill for AI coding agents. It finds and fixes slow parts of a SwiftUI iOS app.
+A skill for AI coding agents. It finds and fixes slow parts of a SwiftUI iOS app: slow screens, slow launch, freezes, laggy scrolling and slow data loading.
 
-## What it does
+## Works with
 
-Your agent:
+- Claude Code
+- OpenAI Codex
+- Cursor
+- Gemini CLI
+- Any agent that supports Agent Skills (`SKILL.md`)
 
-1. Looks at your code for patterns that make SwiftUI slow.
-2. Adds temporary timers to your app to measure how long screens take to open.
-3. Records the app with Instruments to see where the time goes.
-4. Counts how often each view redraws.
-5. Shows which network requests make a screen wait.
-6. Makes one fix at a time and measures again. It keeps the fix only if the numbers get better.
-7. Removes all the temporary code and writes a short report.
+## How it works
 
-It works for slow screens, slow launch, freezes, laggy scrolling and slow data loading.
+1. **Setup.** The agent asks you a few questions about your project (scheme, bundle ID, simulator) and saves the answers in `.swiftui-perf.json`. You do this once.
+2. **Ask.** You tell the agent what is slow. It asks you to log in to the app on the simulator.
+3. **Scan.** It reads your code and lists patterns that often make SwiftUI slow.
+4. **Measure.** It adds temporary timers to your app and measures how long the screen takes to open. It also records which network requests the screen waits for.
+5. **Trace.** It records the app with Instruments to see where the time goes, and counts how often each view redraws.
+6. **Fix.** It makes one change, then measures again the same way. It keeps the change only if the numbers get better.
+7. **Clean up.** It removes all the temporary code.
+8. **Report.** It writes a short report: what was slow, what it fixed, how much faster it is, and what is left.
 
 ## Install
 
@@ -43,21 +48,17 @@ Cursor or any other agent:
 npx skills add repfly/swiftui-perf-skill
 ```
 
-## Set up your project
-
-Run this once in your project folder:
-
-```bash
-node <skill folder>/scripts/setup.mjs init
-```
-
-Answer the questions. Or just ask your agent to set it up.
-
 ## Use
 
 Tell your agent what is slow. For example:
 
 > The home screen opens slowly. Fix it.
+
+The first time, the agent runs the setup for you. To run it yourself:
+
+```bash
+node <skill folder>/scripts/setup.mjs init
+```
 
 ## Needs
 
