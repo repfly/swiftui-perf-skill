@@ -1,6 +1,7 @@
 ---
 name: swiftui-perf
 description: SwiftUI iOS app performance deep dive. Finds and fixes slow screen opens, slow launch, hangs, scroll hitches, extra body re-runs and long request waits. Uses a project config made by an interactive setup, a static smell scan, temporary OSSignposter screen markers, URLSessionTaskMetrics, Instruments and xctrace driven by the agent, Xcode field data and LLDB-only SwiftUI debug hooks. Use when the user says the app or a screen is slow, laggy, janky, hangs, freezes, stutters on scroll, launches slowly or waits too long for data, or asks to profile, measure, trace, benchmark or optimize performance. Triggers: "this screen opens slowly", "profile the home screen", "why is scrolling janky", "launch time", "hang", "Instruments", "xctrace", "time profiler", "perf audit".
+license: MIT
 compatibility: macOS with Xcode 16 or later (xctrace, simctl, LLDB), Node.js 22 or later, an iOS Simulator; a device for absolute numbers.
 metadata:
   version: "1.0.0"
