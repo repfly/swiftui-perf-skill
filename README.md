@@ -10,6 +10,21 @@ A skill for AI coding agents. It finds and fixes slow parts of a SwiftUI iOS app
 - Gemini CLI
 - Any agent that supports Agent Skills (`SKILL.md`)
 
+## What it looks for
+
+- Views that redraw too often, for example because one big view model updates many screens at once.
+- A parent screen that redraws every time its child screen changes.
+- Timers that redraw a whole screen every second.
+- `AnyView`, unstable list IDs and `.id()` tricks that make SwiftUI rebuild views.
+- Long lists built all at once instead of lazily.
+- Heavy work in a view's `init` or `body`: formatters, sorting, JSON decoding, image decoding.
+- Work on the main thread that freezes the UI.
+- Expensive effects on many rows: shadows, blur, masks.
+- Network requests that run one after another when they could run together.
+- The same request sent twice for one screen.
+- Slow app launch: SDKs and setup work before the first frame.
+- Debug tools (for example network inspectors) that slow the app.
+
 ## How it works
 
 1. **Setup.** The agent asks you a few questions about your project (scheme, bundle ID, simulator) and saves the answers in `.swiftui-perf.json`. You do this once.
