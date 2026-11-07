@@ -1,0 +1,12 @@
+{
+  "name": "swiftui-perf-tools",
+  "interface": { "displayName": "SwiftUI Perf Tools" },
+  "plugins": [
+    {
+      "name": "swiftui-perf",
+      "source": { "source": "local", "path": "./plugins/swiftui-perf" },
+      "policy": { "installation": "AVAILABLE" },
+      "category": "Developer Tools"
+    }
+  ]
+}

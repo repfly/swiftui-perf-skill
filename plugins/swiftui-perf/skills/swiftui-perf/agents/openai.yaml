@@ -1,0 +1,6 @@
+interface:
+  display_name: "SwiftUI Perf"
+  short_description: "Measure and fix slow SwiftUI screens, launch, hangs and request waits"
+  default_prompt: "Profile the screen that opens slowly and find the cause"
+policy:
+  allow_implicit_invocation: true

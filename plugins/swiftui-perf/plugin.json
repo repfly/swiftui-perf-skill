@@ -1,0 +1,8 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "swiftui-perf",
+  "version": "1.0.0",
+  "description": "SwiftUI iOS performance deep dive: setup, screen markers, xctrace, network waterfall, LLDB body counts and a one-change-per-run fix loop.",
+  "author": { "name": "Alper Yildirim" },
+  "keywords": ["swiftui", "ios", "performance", "instruments", "xctrace"]
+}

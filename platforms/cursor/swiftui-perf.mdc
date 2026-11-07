@@ -1,0 +1,12 @@
+---
+description: SwiftUI performance work (slow screens, launch, hangs, scroll hitches, request waits). Use the swiftui-perf skill.
+globs:
+alwaysApply: false
+---
+
+For SwiftUI performance work, read the `swiftui-perf` skill (`SKILL.md` in `.cursor/skills/swiftui-perf/`, `.agents/skills/swiftui-perf/` or `~/.cursor/skills/swiftui-perf/`) and follow its phase router.
+
+- Run setup first if `.swiftui-perf.json` does not exist.
+- Measure before and after; change one variable per run.
+- Simulator numbers are relative only.
+- Revert the marker patch before any commit.

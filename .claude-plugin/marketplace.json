@@ -1,0 +1,14 @@
+{
+  "name": "swiftui-perf-tools",
+  "description": "Agent skills for SwiftUI iOS app performance work.",
+  "owner": { "name": "Alper Yildirim" },
+  "plugins": [
+    {
+      "name": "swiftui-perf",
+      "source": "./plugins/swiftui-perf",
+      "description": "SwiftUI iOS performance deep dive: setup, screen markers, xctrace, network waterfall, LLDB body counts and a one-change-per-run fix loop.",
+      "version": "1.0.0",
+      "category": "development"
+    }
+  ]
+}
