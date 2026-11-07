@@ -2,6 +2,20 @@
 
 A skill for AI coding agents. It finds and fixes slow parts of a SwiftUI iOS app.
 
+## What it does
+
+Your agent:
+
+1. Looks at your code for patterns that make SwiftUI slow.
+2. Adds temporary timers to your app to measure how long screens take to open.
+3. Records the app with Instruments to see where the time goes.
+4. Counts how often each view redraws.
+5. Shows which network requests make a screen wait.
+6. Makes one fix at a time and measures again. It keeps the fix only if the numbers get better.
+7. Removes all the temporary code and writes a short report.
+
+It works for slow screens, slow launch, freezes, laggy scrolling and slow data loading.
+
 ## Install
 
 Claude Code:
