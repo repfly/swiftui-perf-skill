@@ -28,6 +28,7 @@ Measure first, change one thing, measure again. Every claim in the report has a 
 11. **Project rules apply.** Read the files in `rules.codeRules` before a fix. Use only APIs available at `deploymentTarget`.
 12. **Learn as you work.** Read the project memory at intake (`memory.mjs show --screen <Screen>`). Record each route to a screen and each obstacle with its fix as soon as you find it (`references/12-project-memory.md`). Never record secrets.
 13. **Each reference ends with "Action plan output".** Write that block into the findings log when the phase ends.
+14. **Load only relevant component references.** After the smell scan, read the component index and load only the component files that match the detected components or smells. Do not load the full monolithic catalogues unless a hypothesis requires the general model.
 
 ## Phase router
 
@@ -36,7 +37,7 @@ Measure first, change one thing, measure again. Every claim in the report has a 
 | 0 | Setup | `references/00-setup.md` | `.swiftui-perf.json`, `setup.mjs check` says "config ok" |
 | 1 | Intake | this file, `references/09-test-environment.md`, `references/12-project-memory.md` | symptom, screen, target, login confirmed, memory read |
 | 2 | Field data | `references/08-field-data.md` | top real-user launch, hang and disk-write issues |
-| 3 | Static scan | `references/03-code-smells.md`, `references/01-rendering-internals.md` | suspects list from `smell_scan.sh` |
+| 3 | Static scan | `references/components/index.md`, then only matching `references/components/*.md`, plus `references/01-rendering-internals.md` when needed; `references/03-code-smells.md` as fallback | suspects list from `smell_scan.sh` + component-targeted hypotheses |
 | 4 | Instrumented run | `references/05-screen-open-metrics.md`, `references/06-launch.md`, `references/07-network-wait.md` | baseline PERF lines and a trace |
 | 5 | Trace analysis | `references/04-instruments-xctrace.md`, `references/02-hidden-apis-and-lldb.md` | evidence per suspect (trace-backed or ruled out) |
 | 6 | Fix loop | `references/10-experiment-protocol.md` | kept and reverted changes with deltas |
